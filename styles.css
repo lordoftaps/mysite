@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #232323; /* Dark background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure at least the full height of the viewport */
+}
+
+header {
+    background: white; /* Gradient background for header */
+    color: black;
+    padding: 20px;
+    z-index: 1;
+    font-weight: 400px;
+    font-size: 130%;
+    text-align: center;
+}
+
+.main {
+    padding: 32px;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
+main {
+    flex-grow: 1; /* Allow main to grow and take remaining vertical space */
+    padding: 100;
+    background: linear-gradient(-90deg, #ee0a0a, #ff00c8); /* Gradient background for tabs */
+}
+
+
+.tab {
+    cursor: pointer;
+    display: inline-block;
+    justify-content: space-between;
+    width: 300px;
+    text-align: center;
+    top: 300px;
+    margin-left: 22%;
+    padding: 26px 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #2c2c2c, #1a1a1a);
+    border: none;
+    border-radius: 36px;
+    font-size: 22px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.tab:hover {
+    background: linear-gradient(90deg, #3c3c3c, #2a2a2a); /* Darker background on hover */
+    transform: scale(1.15); /* Scale up slightly on hover */
+}
+
+.tab:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(128, 128, 128, 0), rgba(128, 128, 128, 0.5), rgba(255, 255, 255, 1), rgba(128, 128, 128, 0.5), rgba(128, 128, 128, 0)); /* Subtle white background for shine effect with fade-in and fade-out edges */
+    opacity: 50%;
+    animation: shine 1.5s forwards; /* Apply shine animation on hover */
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%); /* Initial position outside the button */
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+.tabContent {
+    display: none;
+}
+
+/* Show active tab content */
+.tabContent.active {
+    display: block;
+    margin-top: 20px;
+    color: #fff;
+}
+
+footer {
+    background: white; /* Gradient background for footer */
+    color: black;
+    padding: 20px;
+    font-weight: 100;
+    text-align: center;
+    margin-top: auto; /* Push the footer to the bottom */
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasos Theodosiou</title>
+    <link rel="stylesheet" href="trw.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;1000&display=swap">
+    <audio id="hoverSound" src="hoversound.mp3"></audio> <!-- Add this line -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var buttons = document.querySelectorAll('.tab');
+            var hoverSound = document.getElementById('hoverSound');
+
+            buttons.forEach(function(button) {
+                button.addEventListener('mouseenter', function() {
+                    hoverSound.currentTime = 0;  // Reset playback position to start
+                    hoverSound.play();
+                    button.classList.add('hovered');
+                });
+
+                button.addEventListener('mouseleave', function() {
+                    hoverSound.pause();
+                    hoverSound.currentTime = 0;  // Reset playback position to start
+                    button.classList.remove('hovered');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>SocialPeak Mastery</h1>
+</header>
+
+<main>
+    <nav class="tabs">
+        <button class="tab">Freelancing</button>
+        <button class="tab">Dropshipping</button>
+        <button class="tab">Content Creation</button>
+        <button class="tab">Crypto Investing</button>
+    </nav>
+</main>
+
+</body>
+</html>
